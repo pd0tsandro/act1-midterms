@@ -264,3 +264,29 @@ document.querySelector('#entryForm').addEventListener('submit', (e) => {
             }
         });
     });
+
+    function sortTableByExpiration(sortOrder) {
+        const table = document.querySelector('#parkingTable');
+        const tableBody = table.querySelector('tbody');
+        const rows = Array.from(tableBody.querySelectorAll('tr'));
+
+        rows.sort((a, b) => {
+            const dateA = new Date(a.cells[4].textContent);
+            const dateB = new Date(b.cells[4].textContent);
+            
+            if (sortOrder === 'farthest') {
+                return dateB - dateA; // Sort by farthest expiration date
+            } else {
+                return dateA - dateB; // Sort by nearest expiration date (default)
+            }
+        });
+    
+        tableBody.innerHTML = '';
+        rows.forEach(row => tableBody.appendChild(row));
+    }
+    
+  
+    document.querySelector('#sortExpirationSelect').addEventListener('change', function() {
+        const selectedOption = this.value;
+        sortTableByExpiration(selectedOption);
+    });
