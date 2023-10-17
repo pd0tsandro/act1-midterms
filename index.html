@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>StickCar</title>
+</head>
+
+<body>
+    <header class="shadow">
+        <div class="header-content d-flex justify-content-center p-2">
+            <div id="header-msg" class="ml-5 align-self-center">StickCar</div>
+        </div>
+    </header>
+    <div class="container-md pt-5">
+        <div id="msg"></div>
+        <div class="row">
+            <div class="col-lg-4 col-md-4 col-sm-12 col-12 mx-auto">
+                <div class="card rounded-0 shadow">
+                    <div class="card-header rounded-0 text-center">
+                        <div class="card-title"><b>Sticker Form</b></div>
+                    </div>
+                    <div class="card-body rounded-0">
+                        <div class="container-fluid">
+                            <form id="entryForm">
+                                <div class="form-group">
+                                    <label for="owner">Car Owner/Driver:</label>
+                                    <input type="text" class="form-control rounded-0 shadow-sm" id="owner" placeholder="Name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="car">Car Brand:</label>
+                                    <select class="form-control rounded-0 shadow-sm" id="car">
+                                        <option value="">Select a Car</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="licensePlate">License Plate:</label>
+                                    <input type="text" class="form-control rounded-0 shadow-sm" id="licensePlate" placeholder="ABC123" pattern="[A-Z]{2,3}\d{3}">
+                                    <small id="licensePlateError" class="text-danger"></small>
+                                </div>
+                                <div class="form-group">
+                                    <label for="availDate">Avail Date:</label>
+                                    <input type="date" class="form-control rounded-0 shadow-sm" id="availDate">
+                                </div>
+                                <div class="form-group">
+                                    <label for="plan">Choose a Plan:</label>
+                                    <select class="form-control rounded-0 shadow-sm" id="plan">
+                                        <option value="1">1 Month</option>
+                                        <option value="3">3 Months</option>
+                                        <option value="6">6 Months</option>
+                                        <option value="12">1 Year</option>
+                                        <option value="36">3 Years</option>
+                                        <option value="60">5 Years</option>
+                                        <option value="lifetime">Lifetime</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn mx-auto col-lg-5 col-md-6 col-sm-12 col-12 d-block mt-3 rounded-0 bg-gradient btn-primary" id="btnOne">Save</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        
+            <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                <div class="card rounded-0 shadow">
+                    <div class="card-header rounded-0">
+                        <div class="card-title"><b>List of Registered Cars</b></div>
+                    </div>
+                    <div class="card-body rounded-0">
+                        <div class="container-fluid">
+                            <div class="mb-3 position-relative">
+                                <input type="text" class="form-control rounded-0" id="searchInput" placeholder="Search...">
+                                <span class="position-absolute material-symbols-outlined" style="right: 10px;top: calc(50% - 0.7rem);">search</span>
+                            </div>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-striped table-bordered " id="parkingTable">
+                                        <thead class="text-white" id="tableHead">
+                                            <tr>
+                                                <th scope="col">Owner</th>
+                                                <th scope="col">Car</th>
+                                                <th scope="col">License Plate</th>
+                                                <th scope="col">Availed Date</th>
+                                                <th scope="col">Expiration Date</th>
+                                                <th scope="col">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="tableBody">
+                                        
+                                        </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/stickcar.js"></script>
+</body>
+
+</html>
